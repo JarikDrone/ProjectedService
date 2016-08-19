@@ -1,0 +1,2 @@
+E:\Projects\TestProject\Big\ProjectedService\ProjectedService\bin\Debug\ProjectedService.exe.config
+E:\ProjectsOwn\ProjectedService\ProjectedService\bin\Debug\ProjectedService.exe.config
