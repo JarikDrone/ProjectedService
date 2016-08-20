@@ -1,8 +1,42 @@
-﻿<Window x:Class="ProjectedService.MainWindow"
+﻿<Window x:Name="wMainWindow" x:Class="ProjectedService.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
+        xmlns:local="clr-namespace:ProjectedService"
+        xmlns:res="clr-namespace:ProjectedService.Localization"
+        Title="{x:Static res:Strings.mw_Title}" Height="350" Width="525" Background="#FF3F3F46" WindowStyle="None" AllowsTransparency="True" MouseDown="wMainWindow_MouseDown" MouseDoubleClick="wMainWindow_MouseDoubleClick" FontWeight="Bold">
     <Grid>
-        
+        <TabControl Margin="10" BorderBrush="{x:Null}" FontWeight="Bold">
+            <TabItem x:Name="mw_tabManager" Header="{x:Static res:Strings.tabManager}">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="mw_tabEditor" Header="{x:Static res:Strings.tabEditor}">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem x:Name="mw_tabSettings" Header="{x:Static res:Strings.tabSettings}" HorizontalAlignment="Left" Height="20" VerticalAlignment="Top">
+                <Grid Background="#FFE5E5E5">
+                    <Label x:Name="lblLocalization" Content="{x:Static res:Strings.lblLocalization}" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontWeight="Normal"/>
+                    <Label x:Name="lblLocalizationValue" Content="{x:Static res:Strings.loc_Language}" Margin="98,10,310,0" VerticalAlignment="Top" RenderTransformOrigin="0.505,0.538" FontWeight="Normal" FontStyle="Italic"/>
+                    <Button x:Name="btnPickLocalizationFile" Content="{x:Static res:Strings.btnChange}" HorizontalAlignment="Left" Margin="194,10,0,0" VerticalAlignment="Top" Background="#FF3F3F46" Foreground="White" BorderBrush="{x:Null}" Height="26" FontWeight="Bold"/>
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <Button x:Name="mw_btnClose" Content="" VerticalAlignment="Top" Margin="0,10,10,0" IsCancel="True" Click="mw_btnClose_Click" Height="10" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="27">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Red" Offset="0.693"/>
+                    <GradientStop Color="#FFBC0000"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="mw_btnMinimize" Content="" VerticalAlignment="Top" Margin="0,10,42,0" Height="10" BorderBrush="{x:Null}" HorizontalAlignment="Right" Width="27" Click="mw_btnMinimize_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF666666"/>
+                    <GradientStop Color="#FFB5B5B5" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="WindowTitle" Content="{x:Static res:Strings.mw_Title}" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="331,0,0,0" Foreground="White" FontWeight="Bold" FontSize="14"/>
+
     </Grid>
 </Window>
